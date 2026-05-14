@@ -219,21 +219,33 @@
 
 <!-- FAVICON via inline SVG data URI -->
 <script>
+// ================================================
+// STEP 1 — Replace with your favicon file path
+// e.g. 'assets/favicon.png' or 'images/logo.png'
+const FAVICON_PATH = 'logo png.png';
+// ================================================
+
+// ================================================
+// STEP 2 — Replace with your book cover file path
+// e.g. 'assets/book-cover.jpg' or 'images/cover.png'
+const COVER_PATH = 'FYBS_ebook.jpeg';
+// ================================================
+
 // Favicon
 const link = document.createElement('link');
-link.rel = 'icon'; link.type = 'image/png' href='/logo.png;
-link.href = 'https://i.imgur.com/j8b7xp8.png';
+link.rel = 'icon'; link.type = 'image/png';
+link.href = FAVICON_PATH;
 document.head.appendChild(link);
 
 // Nav logo
 const navLogo = document.querySelector('.nav-logo-img');
-if(navLogo) navLogo.src = 'https://i.imgur.com/j8b7xp8.png';
+if(navLogo) navLogo.src = FAVICON_PATH;
 
 // Book cover
 const bookImg = document.querySelector('.book-img');
 const fallback = document.getElementById('book-fallback');
-if(bookImg){
-  bookImg.src = 'https://i.imgur.com/YX7VZ6x.jpeg';
+if(bookImg && COVER_PATH !== 'FYBS_ebook.jpeg'){
+  bookImg.src = COVER_PATH;
   bookImg.style.display = 'block';
   if(fallback) fallback.style.display = 'none';
 }
